@@ -7,12 +7,9 @@ if (mysqli_connect_errno()) {
 	exit();
 }
 
-printf("Изначальная кодировка: %s\n", $mysqli->character_set_name());
-
 if (!$mysqli->set_charset("utf8")) {
 	printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqli->error);
 	exit();
-} else {
-	printf("Текущий набор символов: %s\n", $mysqli->character_set_name());
 }
+
  ?>
