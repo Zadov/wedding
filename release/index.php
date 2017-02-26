@@ -32,13 +32,13 @@
 
 	</main>
 
-	<footer>
+	<footer class="main-footer">
 		<div class="container">
-			<form action="#" method="post">
+			<form action="save_guests.php" method="post">
 				<label for="first-name">Имя:</label>
-				<input type="text" name="first-name" id="first-name">
+				<input type="text" name="first-name" id="first-name" value="Имя">
 				<label for="second-name">Фамилия:</label>
-				<input type="text" name="second-name" id="second-name">
+				<input type="text" name="second-name" id="second-name" value="Фамилия">
 				<button>Отправить</button>
 			</form>
 		</div>
