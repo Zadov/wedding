@@ -2,9 +2,8 @@
 
 $mysqli = new mysqli("127.0.0.1", "root", "Zadoff112", "guests");
 
-if (mysqli_connect_errno()) {
-	printf("Не удалось подключиться: %s\n", mysqli_connect_errno());
-	exit();
+if ($mysqli->connect_errno) {
+    die('Ошибка соединения: ' . $mysqli->connect_errno);
 }
 
 if (!$mysqli->set_charset("utf8")) {

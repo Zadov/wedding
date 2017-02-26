@@ -7,23 +7,15 @@
 
 	$first_name = strip_tags($first_name);
 	$first_name = trim($first_name);
-	// $first_name = mysqli_real_escape_string($first_name);
+	$first_name = $mysqli->real_escape_string($first_name);
 
-	$sql_first_name = "INSERT INTO list (name) VALUES ('$first_name')";
-	if (mysqli_query($link, $sql_first_name) === TRUE) {
+	if ($mysqli->query("INSERT INTO list (name) VALUES ('$first_name')")) {
 		printf("Добавлено успешно");
 	} else {
-		mysqli_error();
+		printf($mysqli->error);
 	};
 
-	// $query_name = mysqli_query($link, $sql_first_name) or die(mysqli_error());
-
-	// if(isset($query_name)) {
-	// 	echo "Добавлено успешно";
-	// } else {
-	// 	echo "Не успех";
-	// }
-
+	$mysqli->close();
  ?>
 
  <a href="index.php">Домой</a>
