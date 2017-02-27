@@ -7,7 +7,9 @@
 		$i = 1;
 		echo "<table>";
 		while ($row_name = $query_guest->fetch_assoc()) {
+			echo "<tr><td>".$i++."</td><td>".$row_name['name']."</td><td>".$row_name['surname']."</td><td>".$row_name['willbe']."</td><td>".$row_name['whoelse']."</td></tr>";
 		}
+		echo "</table>";
 		$query_guest->close();
 	}
 
