@@ -9,9 +9,9 @@
 	if($second_name == '') die('Введите пожалуйста вашу фамилию. Вернуться для заполнения формы <a href="index.php">на предыдущую страницу</a>');
 
 	if(isset($_POST['will-be'])) {
-		$will_be = true;
+		$will_be = 1;
 	} else {
-		$will_be = false;
+		$will_be = 0;
 	}
 
 	$first_name = trim(strip_tags($first_name));

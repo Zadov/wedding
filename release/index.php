@@ -29,18 +29,26 @@
 				<form action="save_guests.php" method="post" class="guest-form">
 			<!-- <form action="http://echo.htmlacademy.ru" method="post"> -->
 				<div class="guest-form__row">
-					<input class="guest-form__input" type="text" name="first-name" id="first-name">
-					<label class="guest-form__input-title" for="first-name">Имя:</label>
-				</div>
-				
-				<div class="guest-form__row">
-					<input class="guest-form__input" type="text" name="second-name" id="second-name"">
-					<label class="guest-form__input-title" for="second-name">Фамилия:</label>
+					<div class="guest-form__input-block">
+						<input class="guest-form__input" type="text" name="first-name" id="first-name">
+						<label class="guest-form__input-title" for="first-name">Имя:</label>
+					</div>
+
+					<div class="guest-form__input-block">
+						<input class="guest-form__input" type="text" name="second-name" id="second-name"">
+						<label class="guest-form__input-title" for="second-name">Фамилия:</label>
+					</div>
 				</div>
 
-				<div class="guest-form__row">
-					<label for="will-be">Я приду:</label>
-					<input type="checkbox" name="will-be" id="will-be">
+				<div class="guest-form__row guest-form__will-be">
+					<input id="will-be-alone" class="guests-form__radio" type="radio" name="will-be" value="alone">
+					<label class="guests-form__radio-title" for="will-be-alone">Я приду:</label>
+					<input id="will-be-pare" class="guests-form__radio" type="radio" name="will-be" value="pare">
+					<label class="guests-form__radio-title" for="will-be-pare">Приду с парой:</label>
+					<input id="will-be-no" class="guests-form__radio" type="radio" name="will-be" value="no">
+					<label class="guests-form__radio-title" for="will-be-no">Не смогу прийти:</label>
+				</div>
+
 
 				<div class="guest-form__row">
 					<input type="checkbox" id="not-alone" class="not-alone">

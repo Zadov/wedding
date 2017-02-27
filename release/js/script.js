@@ -17,6 +17,8 @@ for (var i = 0; i < filled_input.length; i++) {
 		for (var i = 0; i < filled_input.length; i++) {
 			if (filled_input[i].value != '') {
 				filled_title[i].classList.add("fly-title");
+			} else {
+				filled_title[i].classList.remove("fly-title");
 			}
 		}
 	})
