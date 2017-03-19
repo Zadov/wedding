@@ -21,9 +21,9 @@
 	$second_name = $mysqli->real_escape_string($second_name);
 
 	if ($mysqli->query("INSERT INTO list (name, surname, willbe) VALUES ('$first_name', '$second_name', '$will_be')")) {
-		printf("Имя и фамилия добавлены успешно");
+		echo "Имя и фамилия добавлены успешно";
 	} else {
-		printf($mysqli->error);
+		echo "$mysqli->error";
 	};
 
 	$mysqli->close();

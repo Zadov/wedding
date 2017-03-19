@@ -18,7 +18,10 @@ var rename = require('gulp-rename');
 gulp.task('sass', function () {
     gulp.src('source/scss/**.scss')
     .pipe(plumber())
-    .pipe(sass({errLogToConsole: true}))
+    .pipe(sass({
+        includePaths: require('node-normalize-scss').includePaths,
+        errLogToConsole: true
+    }))
     .pipe(prefixer({browsers:['last 15 versions'], cascade: true }))
     // в файле настройки csscomb: csscomb.json изменил
     // "space-before-opening-brace": "\n" на "space-before-opening-brace": "1"
