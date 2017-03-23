@@ -1,8 +1,9 @@
-@import "normalize";
+@import "_normalize.scss";
 /*Main styles*/
 @import "var";
 @import "header";
 @import "navigation";
+@import "colors";
 @import "form";
 
 body {
@@ -26,6 +27,8 @@ input:focus {
 }
 
 .invite {
+	margin-top: 50px;
+	margin-bottom: 30px;
 	width: 100%;
 }
 
