@@ -9,7 +9,7 @@
 body {
 	margin: 0;
 	font-family: 'Poiret One', Arial, sans-serif;
-	color: $font;
+	color: $font-color;
 	font-weight: bold;
 	font-size: 62.5%;
 }
@@ -33,7 +33,7 @@ input:focus {
 }
 
 .time {
-	border: 2px solid $font;
+	border: 2px solid $font-color;
 	font-size: 2.5em;
 }
 

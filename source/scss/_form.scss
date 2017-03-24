@@ -9,121 +9,124 @@
 	background-repeat: no-repeat;
 	text-align: left;
 	font-size: 25px;
+	
+	&__paper {
+		position: absolute;
+		top: 270px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 90%;
+		height: 400px;
+		padding: 50px;
+		box-sizing: border-box;
+		box-shadow: 0 0 12px 3px #505050;
+		background-color: white;
+		text-align: center;
+	}
+
+	&__row {
+		margin-bottom: 25px;
+	}
+	&__input-block {
+		position: relative;
+		padding-top: 15px;
+		display: inline-block;
+		margin-right: 30px;
+	}
+
+	&__input-block:last-child {
+		margin-right: 0;
+	}
+
+	&__input {
+		font-family: 'Poiret One', Arial, sans-serif;
+		color: $font-color;
+		font-size: 25px;
+		font-weight: bold;
+		text-align: center;
+		border: none;
+		border-bottom: 2px solid $font-color;
+	}
+
+	&__input-title {
+		position: absolute;
+		top: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+		transition: all 0.1s ease-in-out;
+	}
+
+	&__input:focus + &__input-title {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 15px;
+		transition: all 0.1s ease-in-out;
+	}
+
+	&__radio {
+		display: none;
+	}
+
+	&__radio-title {
+		position: relative;
+		padding-left: 30px;
+	}
+
+	&__radio-title:first-of-type {
+		margin-right: 50px;
+	}
+
+	&__radio-title::after {
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		left: 0;
+		display: block;
+		width: 15px;
+		height: 15px;
+		border: 2px solid $font-color;
+		border-radius: 4px;
+		background-color: #fff;
+	}
+
+	&__radio-title:hover::after {
+		background-color: #ccc;
+	}
+
+	&__radio:checked + &__radio-title::after {
+		background-color: transparent;
+	}
+
+	&__radio-title::before {
+		content: '';
+		position: absolute;
+		bottom: 7px;
+		left: 7px;
+		display: block;
+		width: 5px;
+		height: 10px;
+		border-bottom: 2px solid $font-color;
+		border-right: 2px solid $font-color;
+		transform: translateX(-1px) rotate(45deg);
+	}
+
+	&__btn {
+		width: 50%;
+		margin-top: 15px;
+		border-radius: 5px;
+		color: $font-color;
+		background-color: white;
+		border: 2px $font-color solid;
+	}
+
+	&__btn:hover {
+		background-color: #ccc;
+	}
+	
 }
 
-.guest-form__paper {
-	position: absolute;
-	top: 270px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 90%;
-	height: 400px;
-	padding: 50px;
-	box-sizing: border-box;
-	box-shadow: 0 0 12px 3px #505050;
-	background-color: white;
-	text-align: center;
-}
 
-.guest-form__row {
-	margin-bottom: 25px;
-}
-.guest-form__input-block {
-	position: relative;
-	padding-top: 15px;
-	display: inline-block;
-	margin-right: 30px;
-}
-
-.guest-form__input-block:last-child {
-	margin-right: 0;
-}
-
-.guest-form__input {
-	font-family: 'Poiret One', Arial, sans-serif;
-	color: $font;
-	font-size: 25px;
-	font-weight: bold;
-	text-align: center;
-	border: none;
-	border-bottom: 2px solid $font;
-}
-
-.guest-form__input-title {
-	position: absolute;
-	top: 15px;
-	left: 50%;
-	transform: translateX(-50%);
-	transition: all 0.1s ease-in-out;
-}
-
-.guest-form__input:focus + .guest-form__input-title,
-.fly-title {
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	font-size: 15px;
-	transition: all 0.1s ease-in-out;
-}
-
-.guests-form__radio {
-	display: none;
-}
-
-.guests-form__radio-title {
-	position: relative;
-	padding-left: 30px;
-}
-
-.guests-form__radio-title:first-of-type {
-	margin-right: 50px;
-}
-
-.guests-form__radio-title::after {
-	content: '';
-	position: absolute;
-	bottom: 2px;
-	left: 0;
-	display: block;
-	width: 15px;
-	height: 15px;
-	border: 2px solid $font;
-	border-radius: 4px;
-	background-color: #fff;
-}
-
-.guests-form__radio-title:hover::after {
-	background-color: #ccc;
-}
-
-.guests-form__radio:checked + .guests-form__radio-title::after {
-	background-color: transparent;
-}
-
-.guests-form__radio-title::before {
-	content: '';
-	position: absolute;
-	bottom: 7px;
-	left: 7px;
-	display: block;
-	width: 5px;
-	height: 10px;
-	border-bottom: 2px solid $font;
-	border-right: 2px solid $font;
-	transform: translateX(-1px) rotate(45deg);
-}
-
-.guest-form__btn {
-	margin-top: 15px;
-	border-radius: 5px;
-	color: $font;
-	background-color: white;
-	border: 2px $font solid;
-}
-
-.guest-form__btn:hover {
-	background-color: #ccc;
-}
 
 
 
@@ -154,12 +157,12 @@
 	width: 10px;
   height: 10px;
   margin-right: 10px;
-  border: 4px solid $font;
+  border: 4px solid $font-color;
   border-radius: 50%;
   vertical-align: middle;
 }
 .not-alone:checked + label:before {
-  background-color: $font;
+  background-color: $font-color;
 }
 summary {
 	cursor: pointer;
