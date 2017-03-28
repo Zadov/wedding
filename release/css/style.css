@@ -617,7 +617,7 @@ template {
           box-sizing: border-box;
   width: 90%;
   height: 400px;
-  padding: 50px;
+  padding: 10px;
 
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);

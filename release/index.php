@@ -32,7 +32,7 @@
 				</ul>
 			</nav>
 
-			<img class="invite" src="img/DSC_8028.png" alt="">
+			<img class="invite" src="img/privet-medVed.png" alt="">
 
 		</div>
 	</header>
@@ -40,16 +40,19 @@
 	<main>
 		<div class="container">
 <!-- Тайминг -->
-			<p id="nav-timing" class="time">17 июня 2017<br>Начало в 16:00</p>
+			<p class="time">17 июня 2017<br>Начало в 16:00</p>
+			<img class="timing-title" id="nav-timing" src="img/timing-title.png" width="550" height="auto"></img>
 			
 <!-- Наши цвета -->
 			<div class="colors" id="nav-colors">
-				<img class="colors__img" src="img/blots.png" alt="Наши цвета" width="740" height="500">
+
+				<img class="colors__img" src="img/blots.png" alt="Наши цвета" width="740" height="auto">
 			</div>
 
 <!-- Форма отправки -->
 			<form id="nav-i-will-come" action="save_guests.php" method="post" class="guest-form">
 				<div class="guest-form__paper">
+					<img class="guest-form__title" src="img/confirm-visit.png" width="100%" height="auto">
 					<div class="guest-form__row">
 						<div class="guest-form__input-block">
 							<input class="guest-form__input" type="text" name="first-name" id="first-name">
@@ -85,6 +88,9 @@
 
 	<footer class="main-footer">
 		<div class="container">
+			<div class="map">
+				<img class="map__title" src="img/map-title.png" width="100%" height="auto"></img>
+			</div>
 			<a href="#" id="up">Вверх</a>
 		</div>
 
