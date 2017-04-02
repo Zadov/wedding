@@ -1,9 +1,8 @@
 /*Guest Form*/
-
 .guest-form {
-	position: relative;
-	min-height: 700px;
 	margin: 0 auto;
+	padding-top: 30%;
+	padding-bottom: 4%;
 	background-image: url("../img/mail.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -11,13 +10,9 @@
 	font-size: 25px;
 	
 	&__paper {
-		position: absolute;
-		top: 270px;
-		left: 50%;
-		transform: translateX(-50%);
 		width: 90%;
-		height: 400px;
-		padding: 10px;
+		margin: 0 auto;
+		padding: 30px;
 		box-sizing: border-box;
 		box-shadow: 0 0 12px 3px #505050;
 		background-color: white;
@@ -25,25 +20,27 @@
 	}
 
 	&__row {
-		margin-bottom: 25px;
-	}
-	&__input-block {
-		position: relative;
-		padding-top: 15px;
-		display: inline-block;
-		margin-right: 30px;
+		margin-bottom: 20px;
 	}
 
-	&__input-block:last-child {
-		margin-right: 0;
+	&__fio {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__input-block {
+		position: relative;
+		width: 48%;
+		padding-top: 15px;
 	}
 
 	&__input {
+		width: 100%;
 		font-family: 'Poiret One', Arial, sans-serif;
 		color: $font-color;
 		font-size: 25px;
 		font-weight: bold;
-		text-align: center;
+		text-align: left;
 		border: none;
 		border-bottom: 2px solid $font-color;
 	}
@@ -51,17 +48,21 @@
 	&__input-title {
 		position: absolute;
 		top: 15px;
-		left: 50%;
-		transform: translateX(-50%);
+		left: 0;
 		transition: all 0.1s ease-in-out;
 	}
 
 	&__input:focus + &__input-title {
 		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
+		left: 0;
 		font-size: 15px;
 		transition: all 0.1s ease-in-out;
+	}
+
+	&__radio-block {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	&__radio {
@@ -71,10 +72,6 @@
 	&__radio-title {
 		position: relative;
 		padding-left: 30px;
-	}
-
-	&__radio-title:first-of-type {
-		margin-right: 50px;
 	}
 
 	&__radio-title::after {
@@ -111,9 +108,17 @@
 		transform: translateX(-1px) rotate(45deg);
 	}
 
+	&__comment {
+		width: 100%;
+		margin-bottom: 10px;
+		border: 2px $font-color solid;
+		border-radius: 4px;
+		font-size: 0.7em;
+	}
+
 	&__btn {
-		width: 50%;
-		margin-top: 15px;
+		display: block;
+		margin: 0 auto;
 		border-radius: 5px;
 		color: $font-color;
 		background-color: white;
@@ -126,55 +131,20 @@
 	
 }
 
-
-
-
-
-/*Раскрывающиеся блоки со скрытым содержанием*/
-.not-alone,
-.not-alone + label ~ details {
-	display: none;
-}
-.not-alone + label {
-	margin: 0;
-	padding: 0;
-	cursor: pointer;
-}
-.not-alone:checked + label ~ details {
-	display: block;
-  margin-left: 10px;
-	animation: fade ease-in 0.5s;
-}
-
-@keyframes fade {
-	from {opacity: 0;}
-	to {opacity: 1}
-}
-
-.not-alone + label:before {
-	content: '';
-	display: inline-block;
-	width: 10px;
-  height: 10px;
-  margin-right: 10px;
-  border: 4px solid $font-color;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-.not-alone:checked + label:before {
-  background-color: $font-color;
-}
-summary {
-	cursor: pointer;
-}
-summary + p {
-	padding-left: 15px;
+.fly-title {
+	top: 0;
+	left: 0;
+	font-size: 15px;
+	transition: all 0.1s ease-in-out;
 }
 
 
 @media screen and (max-width: 480px) {
-	
 	.guest-form {
 		font-size: 18px;
+
+		&__input {
+			font-size: 16px;
+		}
 	}
 }

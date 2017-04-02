@@ -22,13 +22,20 @@
 	}
 
 	&__list a:hover {
-		background-color: lightblue;
+		background-color: #ccc;
 	}
 
 	&__list a:active {
-		background-color: blue;
+		background-color: lightblue;
 	}
 
+}
+
+@media screen and (max-width: 570px) {
+	
+	.main-navigation__list a {
+		font-size: 24px;
+	}
 }
 
 
@@ -36,5 +43,13 @@
 	
 	.main-navigation__list a {
 		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	
+	.main-navigation__list a {
+		padding: 3px;
+		font-size: 17px;
 	}
 }

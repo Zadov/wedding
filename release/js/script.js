@@ -17,10 +17,10 @@ for (var i = 0; i < filled_input.length; i++) {
 
 // Плавный скролл к якорю
 
-var linkNav = document.querySelectorAll('[href^="#nav-"]'),
+var link_nav = document.querySelectorAll('[href^="#nav-"]'),
 		V = 0.5;
-for (var i = 0; i < linkNav.length; i++) {
-	linkNav[i].addEventListener('click', function(e) {
+for (var i = 0; i < link_nav.length; i++) {
+	link_nav[i].addEventListener('click', function(e) {
 		e.preventDefault();
 		var w = window.pageYOffset,
 				hash = this.href.replace(/[^#]*(.*)/, '$1');
@@ -44,11 +44,34 @@ for (var i = 0; i < linkNav.length; i++) {
 // Прокрутка на верх страницы
 
 function go_up() {
-	window.scrollBy(0,-30); // чем меньше значение (цифра -30), тем выше скорость перемещения
+	window.scrollBy(0,-100); // чем меньше значение (цифра -30), тем выше скорость перемещения
 	if (window.pageYOffset > 0) {requestAnimationFrame(go_up);} // если значение прокрутки больше нуля, то функция повториться
 }
 
-document.getElementById('up').addEventListener('click', function(e) {
+var up = document.getElementById('up');
+
+window.onscroll = function() {
+	var pageY = window.pageYOffset || document.documentElement.scrollTop;
+	var innerHeight = document.documentElement.clientHeight;
+
+	switch (up.className) {
+		case '':
+			if (pageY > innerHeight) {
+				up.className = 'up';
+			}
+			break;
+
+		case 'up':
+			if (pageY < innerHeight) {
+				up.className = '';
+			}
+			break;
+	}
+}
+
+up.addEventListener('click', function(e) {
 	e.preventDefault();
 	go_up();
 }, false);
+
+

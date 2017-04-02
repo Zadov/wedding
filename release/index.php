@@ -32,7 +32,7 @@
 				</ul>
 			</nav>
 
-			<img class="invite" src="img/privet-medVed.png" alt="">
+			<img class="invite" src="img/hi.png" alt="">
 
 		</div>
 	</header>
@@ -40,20 +40,27 @@
 	<main>
 		<div class="container">
 <!-- Тайминг -->
-			<p class="time">17 июня 2017<br>Начало в 16:00</p>
-			<img class="timing-title" id="nav-timing" src="img/timing-title.png" width="550" height="auto"></img>
+			<div class="timing">
+				<p class="timing__info">17 июня 2017<br>Начало в 16:00</p>
+				<img class="timing__title" id="nav-timing" src="img/time2.png" width="100%" height="auto"></img>
+				<ul class="timing__list">
+					<li class="timing__event timing__event_16">Выездная регистрация</li>
+					<li class="timing__event timing__event_17">Фотосессия</li>
+					<li class="timing__event timing__event_18">Начало ужина</li>
+					<li class="timing__event timing__event_24">Окончание вечера</li>
+				</ul>
+			</div>
 			
 <!-- Наши цвета -->
 			<div class="colors" id="nav-colors">
-
-				<img class="colors__img" src="img/blots.png" alt="Наши цвета" width="740" height="auto">
+				<img class="colors__img" src="img/ups.png" alt="Наши цвета" width="100%" height="auto">
 			</div>
 
 <!-- Форма отправки -->
 			<form id="nav-i-will-come" action="save_guests.php" method="post" class="guest-form">
 				<div class="guest-form__paper">
-					<img class="guest-form__title" src="img/confirm-visit.png" width="100%" height="auto">
-					<div class="guest-form__row">
+					<img class="guest-form__title" src="img/vizit.png" width="100%" height="auto">
+					<div class="guest-form__row guest-form__fio">
 						<div class="guest-form__input-block">
 							<input class="guest-form__input" type="text" name="first-name" id="first-name">
 							<label class="guest-form__input-title" for="first-name">Имя:</label>
@@ -65,37 +72,37 @@
 						</div>
 					</div>
 
-					<div class="guest-form__row">
+					<div class="guest-form__row guest-form__radio-block">
 						<input id="will-be-alone" class="guest-form__radio" type="radio" name="will-be" value="alone">
 						<label class="guest-form__radio-title" for="will-be-alone">Я приду</label>
 
 						<input id="will-be-pare" class="guest-form__radio" type="radio" name="will-be" value="pare">
 						<label class="guest-form__radio-title" for="will-be-pare">Приду с парой</label>
-					</div>
 
-					<div class="guest-form__row">
 						<input id="will-be-no" class="guest-form__radio" type="radio" name="will-be" value="no">
 						<label class="guest-form__radio-title" for="will-be-no">Не смогу прийти</label>
 					</div>
-
+					<textarea class="guest-form__comment" name="comment" id="comment" cols="25" rows="2" placeholder="Для дополнительной информации"></textarea>
 					<button class="guest-form__btn">Отправить</button>
 				</div>
 			</form>
 		</div>
-
-
 	</main>
 
 	<footer class="main-footer">
 		<div class="container">
-			<div class="map">
-				<img class="map__title" src="img/map-title.png" width="100%" height="auto"></img>
+			<div class="place">
+				<img class="place__title" id="nav-place" src="img/map-title.jpg" width="70%" height="auto"></img>
+				<div class="place__block">
+					<p>Регистрация: мы сообщим адрес чуть позже</p>
+					<p>Ужин: ул. Воскресенская, 20<br>Ресторан &laquo;Соль и Перец&raquo;<br>ТРК &laquo;Титан-Арена&raquo;<br>отдельный вход со стороны ул.Воскресенская</p>
+				</div>
 			</div>
-			<a href="#" id="up">Вверх</a>
 		</div>
 
+		<iframe src="https://api-maps.yandex.ru/frame/v1/-/C6QkuSiQ" width="100%" height="400" frameborder="0"></iframe>
 	</footer>
-
+	<a href="#" id="up"></a>
 <script src="js/script.js"></script>
 </body>
 </html>

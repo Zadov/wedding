@@ -8,11 +8,11 @@
 	if(isset($_POST['second-name'])) $second_name = $_POST['second-name'];
 	if($second_name == '') die('Введите пожалуйста вашу фамилию. Вернуться для заполнения формы <a href="index.php">на предыдущую страницу</a>');
 
-	if(isset($_POST['will-be'])) {
-		$will_be = 1;
-	} else {
-		$will_be = 0;
-	}
+	if(isset($_POST['comment'])) $comment = $_POST['comment'];
+
+	$will_be = '';
+	if(isset($_POST['will-be'])) $will_be = $_POST['will-be'];
+	if($will_be == '') die('Сообщите нам пожалуйста о своем намерении присутствовать на нашей свадьбе. Вернуться для заполнения формы <a href="index.php">на предыдущую страницу</a>');
 
 	$first_name = trim(strip_tags($first_name));
 	$first_name = $mysqli->real_escape_string($first_name);
@@ -20,7 +20,10 @@
 	$second_name = trim(strip_tags($second_name));
 	$second_name = $mysqli->real_escape_string($second_name);
 
-	if ($mysqli->query("INSERT INTO list (name, surname, willbe) VALUES ('$first_name', '$second_name', '$will_be')")) {
+	$comment = trim(strip_tags($comment));
+	$comment = $mysqli->real_escape_string($comment);
+
+	if ($mysqli->query("INSERT INTO list (name, surname, willbe, comment) VALUES ('$first_name', '$second_name', '$will_be', '$comment')")) {
 		echo "Имя и фамилия добавлены успешно";
 	} else {
 		echo "$mysqli->error";
