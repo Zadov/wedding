@@ -27,6 +27,7 @@ for (var i = 0; i < link_nav.length; i++) {
 				t = document.querySelector(hash).getBoundingClientRect().top,
 				start = null;
 		requestAnimationFrame(step);
+
 		function step(time) {
 			if (start === null) start = time;
 			var progress = time - start,
@@ -74,4 +75,30 @@ up.addEventListener('click', function(e) {
 	go_up();
 }, false);
 
+
+// загрузка формы без перегрузки страницы
+
+
+var sendButton = document.querySelector('.guest-form__btn');
+var popup = document.querySelector('.form-popup');
+var close = document.querySelector('.form-popup__close');
+
+var regVr22 = "<div><img style='margin-bottom:-4px;' src='../load.gif' alt='Отправка...' width='16' height='16'><span style='font: 11px Verdana; color:#333; margin-left:6px;'>Сообщение обрабатывается...</span></div><br />";
+
+if (sendButton) {
+	sendButton.addEventListener('click', function(e) {
+		e.preventDefault();
+		popup.classList.add('form-popup_show');
+		popup.innerHtml = regVr22;
+	})
+}
+
+if (close) {
+	close.addEventListener('click', function(e) {
+		e.preventDefault();
+		popup.classList.remove('form-popup_show');
+	})
+}
+
+var regVr22 = "<div><img style='margin-bottom:-4px;' src='../load.gif' alt='Отправка...' width='16' height='16'><span style='font: 11px Verdana; color:#333; margin-left:6px;'>Сообщение обрабатывается...</span></div><br />";
 

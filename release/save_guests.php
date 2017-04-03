@@ -30,6 +30,6 @@
 	};
 
 	$mysqli->close();
- ?>
 
- <a href="index.php">Домой</a>
+
+	echo '<p><a href="index.php">Домой</a></p>';

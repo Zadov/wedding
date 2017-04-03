@@ -57,7 +57,7 @@
 			</div>
 
 <!-- Форма отправки -->
-			<form id="nav-i-will-come" action="save_guests.php" method="post" class="guest-form">
+			<form id="nav-i-will-come" action="#" method="post" class="guest-form">
 				<div class="guest-form__paper">
 					<img class="guest-form__title" src="img/vizit.png" width="100%" height="auto">
 					<div class="guest-form__row guest-form__fio">
@@ -89,6 +89,10 @@
 		</div>
 	</main>
 
+	<div class="form-popup">
+		<a class="form-popup__close" href="#"></a>
+	</div>
+
 	<footer class="main-footer">
 		<div class="container">
 			<div class="place">
@@ -103,6 +107,7 @@
 		<iframe src="https://api-maps.yandex.ru/frame/v1/-/C6QkuSiQ" width="100%" height="400" frameborder="0"></iframe>
 	</footer>
 	<a href="#" id="up"></a>
+
 <script src="js/script.js"></script>
 </body>
 </html>
