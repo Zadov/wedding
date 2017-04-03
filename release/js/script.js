@@ -89,7 +89,7 @@ if (sendButton) {
 	sendButton.addEventListener('click', function(e) {
 		e.preventDefault();
 		popup.classList.add('form-popup_show');
-		popup.innerHtml = regVr22;
+		popup.innerHTML = regVr22;
 	})
 }
 
@@ -99,6 +99,4 @@ if (close) {
 		popup.classList.remove('form-popup_show');
 	})
 }
-
-var regVr22 = "<div><img style='margin-bottom:-4px;' src='../load.gif' alt='Отправка...' width='16' height='16'><span style='font: 11px Verdana; color:#333; margin-left:6px;'>Сообщение обрабатывается...</span></div><br />";
 
