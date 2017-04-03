@@ -82,14 +82,15 @@ up.addEventListener('click', function(e) {
 var sendButton = document.querySelector('.guest-form__btn');
 var popup = document.querySelector('.form-popup');
 var close = document.querySelector('.form-popup__close');
+var message = document.querySelector('.form-popup__message');
 
-var regVr22 = "<div><img style='margin-bottom:-4px;' src='../load.gif' alt='Отправка...' width='16' height='16'><span style='font: 11px Verdana; color:#333; margin-left:6px;'>Сообщение обрабатывается...</span></div><br />";
+var regVr22 = "<span>Сообщение обрабатывается...</span>";
 
 if (sendButton) {
 	sendButton.addEventListener('click', function(e) {
 		e.preventDefault();
 		popup.classList.add('form-popup_show');
-		popup.innerHTML = regVr22;
+		message.innerHTML = regVr22;
 	})
 }
 

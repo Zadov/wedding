@@ -90,6 +90,7 @@
 	</main>
 
 	<div class="form-popup">
+		<div class="form-popup__message"></div>
 		<a class="form-popup__close" href="#"></a>
 	</div>
 
