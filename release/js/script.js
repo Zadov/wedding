@@ -101,3 +101,32 @@ if (close) {
 	})
 }
 
+
+
+
+// Яндекс карты
+
+ymaps.ready(init);
+var myMap,
+		myPlacemark;
+
+function init(){     
+	myMap = new ymaps.Map ("map", {
+		center: [64.54197856, 40.53565863],
+		zoom: 15
+	});
+
+	myPlacemark = new ymaps.Placemark([64.54197856, 40.53565863], 
+	{ 
+		balloonContent: '<b>Соль и перец</b>'
+	},
+	{
+		iconImageHref: '../img/heartMark.png',
+		// iconImageSize: [30, 42],
+		// iconImageOffset: [-3, -42]
+	});
+
+	myMap.geoObjects.add(myPlacemark);
+	myMap.controls.add('zoomControl', {right : '20px', top: '10px'});
+	myMap.behaviors.enable('scrollZoom');
+}

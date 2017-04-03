@@ -968,9 +968,16 @@ template {
   border: 2px #565a5d solid;
 }
 
+#map {
+  font-size: 2.5em;
+}
+
 @media screen and (max-width: 480px) {
   .place {
     font-size: 18px;
+  }
+  #map {
+    font-size: 2em;
   }
 }
 

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 	<title>Приглашение на свадьбу Саши и Лены</title>
 </head>
 <body>
@@ -104,8 +105,10 @@
 				</div>
 			</div>
 		</div>
+		
+		<div id="map" style="width: 100%; height: 400px"></div>
 
-		<iframe src="https://api-maps.yandex.ru/frame/v1/-/C6QkuSiQ" width="100%" height="400" frameborder="0"></iframe>
+		<!-- <iframe src="https://api-maps.yandex.ru/frame/v1/-/C6QkuSiQ" width="100%" height="400" frameborder="0"></iframe> -->
 	</footer>
 	<a href="#" id="up"></a>
 
