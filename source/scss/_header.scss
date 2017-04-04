@@ -19,6 +19,7 @@
 	}
 
 	&__heart {
+		flex-shrink: 0;
 		width: 14vw;
 		height: 15vw;
 		margin: 0 4vw;

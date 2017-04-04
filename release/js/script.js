@@ -108,11 +108,11 @@ if (sendButton) {
 		}
 
 		if (!surname) {
-			message.innerHTML = '<span>Напишите пожалуйста свою фамилию</span>';
+			message.innerHTML = '<span>Пожалуйста, напишите свою фамилию</span>';
 		}
 
 		if (!name) {
-			message.innerHTML = '<span>Напишите пожалуйста свое имя</span>';
+			message.innerHTML = '<span>Пожалуйста, напишите свое имя</span>';
 		}
 
 // если все данные заполнены, включаем ajax
@@ -132,9 +132,9 @@ if (sendButton) {
 			xhr.send(vars);
 
 			if (come == 'no') {
-				message.innerHTML = '<span>Очень жаль, ' + name + ', что Вас не будет с нами :(</span>';
+				message.innerHTML = '<span>Очень жаль, ' + name + ', что Вы не будете с нами :(</span>';
 			} else {
-				message.innerHTML = '<span>Спасибо, ' + name + ', что будете с нами!</span>';
+				message.innerHTML = '<span>Мы рады, что Вы будете с нами, ' + name + '!</span>';
 			}
 
 			document.getElementById('first-name').value = '';

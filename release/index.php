@@ -33,7 +33,7 @@
 				</ul>
 			</nav>
 
-			<img class="invite" src="img/hi.png" alt="">
+			<img class="invite" src="img/hello.svg" alt="">
 
 		</div>
 	</header>
@@ -43,7 +43,7 @@
 <!-- Тайминг -->
 			<div class="timing">
 				<p class="timing__info">17 июня 2017<br>Начало в 16:00</p>
-				<img class="timing__title" id="nav-timing" src="img/time2.png" width="100%" height="auto"></img>
+				<img class="timing__title" id="nav-timing" src="img/time2.svg" width="100%" height="auto"></img>
 				<ul class="timing__list">
 					<li class="timing__event timing__event_16">Выездная регистрация</li>
 					<li class="timing__event timing__event_17">Фотосессия</li>

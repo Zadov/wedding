@@ -495,7 +495,11 @@ template {
 .img-container__heart {
   width: 14vw;
   height: 15vw;
-  margin: 0 4vw;
+  margin: 0 4vw; 
+
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 @media screen and (max-width: 480px) {
