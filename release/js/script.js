@@ -84,13 +84,64 @@ var popup = document.querySelector('.form-popup');
 var close = document.querySelector('.form-popup__close');
 var message = document.querySelector('.form-popup__message');
 
-var regVr22 = "<span>Сообщение обрабатывается...</span>";
+var sending = '<span class="loading-span">Сообщение обрабатывается...</span><img src="img/load.gif" alt="loading" width="80" height="80">';
 
 if (sendButton) {
 	sendButton.addEventListener('click', function(e) {
 		e.preventDefault();
 		popup.classList.add('form-popup_show');
-		message.innerHTML = regVr22;
+		message.innerHTML = sending;
+
+		var name = document.getElementById('first-name').value;
+		var surname = document.getElementById('second-name').value;
+		if (!document.querySelector('input[name="will-be"]:checked')) {
+			var come = '';
+		} else {
+			var come = document.querySelector('input[name="will-be"]:checked').value;
+		}
+		var comment = document.getElementById('comment').value;
+
+// проверяем наличие введенных данных
+
+		if (!come) {
+			message.innerHTML = '<span>Сообщите нам пожалуйста о своем намерении присутствовать на нашей свадьбе.</span>';
+		}
+
+		if (!surname) {
+			message.innerHTML = '<span>Напишите пожалуйста свою фамилию</span>';
+		}
+
+		if (!name) {
+			message.innerHTML = '<span>Напишите пожалуйста свое имя</span>';
+		}
+
+// если все данные заполнены, включаем ajax
+		if (come && surname && name) {
+			var xhr = new XMLHttpRequest();
+			var vars = "name=" + name + "&surname=" + surname + "&come=" + come + "&comment=" + comment;
+
+			xhr.open('POST', 'save_guests.php', true);
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+			// xhr.onreadystatechange = function() {
+			// 	if (this.readyState = 4) return;
+
+			// 	alert( this.responseText );
+			// }
+
+			xhr.send(vars);
+
+			if (come == 'no') {
+				message.innerHTML = '<span>Очень жаль, ' + name + ', что Вас не будет с нами :(</span>';
+			} else {
+				message.innerHTML = '<span>Спасибо, ' + name + ', что будете с нами!</span>';
+			}
+
+			document.getElementById('first-name').value = '';
+			document.getElementById('second-name').value = '';
+			document.getElementById('comment').value = '';
+			document.querySelector('input[name="will-be"]:checked').checked = false;
+		}
 	})
 }
 
@@ -121,7 +172,7 @@ function init(){
 		balloonContent: '<b>Соль и перец</b>'
 	},
 	{
-		iconImageHref: '../img/heartMark.png',
+		iconImageHref: 'img/heartMark.png',
 		// iconImageSize: [30, 42],
 		// iconImageOffset: [-3, -42]
 	});

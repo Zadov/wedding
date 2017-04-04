@@ -891,19 +891,17 @@ template {
 
 .form-popup {
   position: fixed;
+  z-index: 100; 
   top: 50%;
   left: 50%;
 
   display: none;
 
-  width: 250px;
-  height: 150px;
-
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); 
+          transform: translate(-50%, -50%);
 
-  background-color: rgba(255, 255, 255, .7);
+  background-color: white;
   -webkit-box-shadow: 0 0 15px 2px #565a5d;
           box-shadow: 0 0 15px 2px #565a5d;
 }
@@ -941,8 +939,38 @@ template {
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+.form-popup__message {
+  font-size: 2.5em;
+
+  padding: 40px 5% 20px;
+
+  text-align: center;
+}
+.form-popup__message span {
+  display: block;
+
+  margin-bottom: 20px;
+}
 .form-popup_show {
   display: block;
+}
+
+@media screen and (max-width: 570px) {
+  .form-popup__message {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-popup__message {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .form-popup__message {
+    font-size: 17px;
+  }
 }
 
 .place {
@@ -969,7 +997,10 @@ template {
 }
 
 #map {
-  font-size: 2.5em;
+  font-size: 2.5em; 
+
+  width: 100%;
+  height: 400px;
 }
 
 @media screen and (max-width: 480px) {

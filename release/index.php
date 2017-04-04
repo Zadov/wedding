@@ -106,9 +106,8 @@
 			</div>
 		</div>
 		
-		<div id="map" style="width: 100%; height: 400px"></div>
+		<div id="map"></div>
 
-		<!-- <iframe src="https://api-maps.yandex.ru/frame/v1/-/C6QkuSiQ" width="100%" height="400" frameborder="0"></iframe> -->
 	</footer>
 	<a href="#" id="up"></a>
 
