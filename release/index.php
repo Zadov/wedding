@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 	<title>Приглашение на свадьбу Саши и Лены</title>
 </head>
@@ -60,7 +61,7 @@
 <!-- Форма отправки -->
 			<form id="nav-i-will-come" action="#" method="post" class="guest-form">
 				<div class="guest-form__paper">
-					<img class="guest-form__title" src="img/vizit.png" width="100%" height="auto">
+					<img class="guest-form__title" src="img/vizit.svg" width="100%" height="auto">
 					<div class="guest-form__row guest-form__fio">
 						<div class="guest-form__input-block">
 							<input class="guest-form__input" type="text" name="first-name" id="first-name">
