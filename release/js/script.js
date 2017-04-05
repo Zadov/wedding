@@ -1,3 +1,5 @@
+"use strict";
+
 // Улетающие заголовки в форме
 
 var filled_input = document.querySelectorAll(".guest-form__input");
@@ -22,17 +24,22 @@ var link_nav = document.querySelectorAll('[href^="#nav-"]'),
 for (var i = 0; i < link_nav.length; i++) {
 	link_nav[i].addEventListener('click', function(e) {
 		e.preventDefault();
+
 		var w = window.pageYOffset,
-				hash = this.href.replace(/[^#]*(.*)/, '$1');
+				hash = this.href.replace(/[^#]*(.*)/, '$1'),
 				t = document.querySelector(hash).getBoundingClientRect().top,
 				start = null;
+
 		requestAnimationFrame(step);
 
 		function step(time) {
 			if (start === null) start = time;
+
 			var progress = time - start,
 					r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+
 			window.scrollTo(0,r);
+			
 			if (r != w + t) {
 				requestAnimationFrame(step)
 			} else {
@@ -122,14 +129,13 @@ if (sendButton) {
 
 			xhr.open('POST', 'save_guests.php', true);
 			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-			// xhr.onreadystatechange = function() {
-			// 	if (this.readyState = 4) return;
-
-			// 	alert( this.responseText );
-			// }
-
 			xhr.send(vars);
+
+			// xhr.onload = function() {
+			// 	alert(xhr.responseText);
+			// };
+
+
 
 			if (come == 'no') {
 				message.innerHTML = '<span>Очень жаль, ' + name + ', что Вы не будете с нами :(</span>';

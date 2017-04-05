@@ -476,16 +476,18 @@ template {
 .img-container__title {
   position: absolute;
   top: 10%;
-  left: 50%;
 
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
 
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  width: 100%;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
 }
 .img-container__names {
   font-size: 10vw;
