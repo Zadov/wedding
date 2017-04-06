@@ -99,25 +99,52 @@ if (sendButton) {
 		popup.classList.add('form-popup_show');
 		message.innerHTML = sending;
 
-		var myForm = document.querySelector(".guest-form");
-
-		var xhr  = new XMLHttpRequest(),
-				vars = new FormData(myForm);
-		xhr.open('POST', 'save_guests.php', true);
-		xhr.send(vars);
-
-		xhr.onload = function() {
-			message.innerHTML = xhr.responseText;
-		};
-
-		var	name = document.getElementById('first-name').value,
+		var myForm = document.querySelector(".guest-form"),
+				name = document.getElementById('first-name').value,
 				surname = document.getElementById('second-name').value,
+				comment = document.getElementById('comment').value;
 				come = '';
 		if (document.querySelector('input[name="will-be"]:checked')) {
-			come = document.querySelector('input[name="will-be"]:checked').value;
+			var come = document.querySelector('input[name="will-be"]:checked').value;
 		}
 
+// проверяем наличие введенных данных
+
+		if (!come) {
+			message.innerHTML = '<span>Сообщите нам пожалуйста о своем намерении присутствовать на нашей свадьбе.</span>';
+		}
+		if (!surname) {
+			message.innerHTML = '<span>Пожалуйста, напишите свою фамилию</span>';
+		}
+		if (!name) {
+			message.innerHTML = '<span>Пожалуйста, напишите свое имя</span>';
+		}
+
+// если все данные заполнены, включаем ajax
 		if (come && surname && name) {
+			var xhr = new XMLHttpRequest();
+			// var vars = "name=" + name + "&surname=" + surname + "&come=" + come + "&comment=" + comment;
+
+			
+			var vars = new FormData(myForm);
+
+			xhr.open('POST', 'save_guests.php', true);
+			// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xhr.send(vars);
+
+
+			// xhr.onload = function() {
+			// 	alert(xhr.responseText);
+			// };
+
+
+
+			if (come == 'no') {
+				message.innerHTML = '<span>Очень жаль, ' + name + ', что Вы не будете с нами :(</span>';
+			} else {
+				message.innerHTML = '<span>Мы рады, что Вы будете с нами, ' + name + '!</span>';
+			}
+
 			document.getElementById('first-name').value = '';
 			document.getElementById('second-name').value = '';
 			document.getElementById('comment').value = '';

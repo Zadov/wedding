@@ -1,5 +1,5 @@
 <?php 
-	
+	header("Content-Type: text/html; charset=utf-8");
 	include_once 'bd.php';
 
 	$sql_guests = "SELECT * FROM list ORDER BY name_id ASC";

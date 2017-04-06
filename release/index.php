@@ -99,7 +99,7 @@
 	<footer class="main-footer">
 		<div class="container">
 			<div class="place">
-				<img class="place__title" id="nav-place" src="img/map-title.jpg" width="70%" height="auto"></img>
+				<img class="place__title" id="nav-place" src="img/map-title.svg" width="70%" height="auto"></img>
 				<div class="place__block">
 					<p>Регистрация: мы сообщим адрес чуть позже</p>
 					<p>Ужин: ул. Воскресенская, 20<br>Ресторан &laquo;Соль и Перец&raquo;<br>ТРК &laquo;Титан-Арена&raquo;<br>отдельный вход со стороны ул.Воскресенская</p>
