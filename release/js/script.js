@@ -21,6 +21,7 @@ for (var i = 0; i < filled_input.length; i++) {
 
 var link_nav = document.querySelectorAll('[href^="#nav-"]'),
 		V = 0.5;
+
 for (var i = 0; i < link_nav.length; i++) {
 	link_nav[i].addEventListener('click', function(e) {
 		e.preventDefault();
@@ -53,7 +54,7 @@ for (var i = 0; i < link_nav.length; i++) {
 
 function go_up() {
 	window.scrollBy(0,-100); // чем меньше значение (цифра -30), тем выше скорость перемещения
-	if (window.pageYOffset > 0) {requestAnimationFrame(go_up);} // если значение прокрутки больше нуля, то функция повториться
+	if (window.pageYOffset > 0) requestAnimationFrame(go_up); // если значение прокрутки больше нуля, то функция повториться
 }
 
 var up = document.getElementById('up');
@@ -90,7 +91,6 @@ var sendButton = document.querySelector('.guest-form__btn');
 var popup = document.querySelector('.form-popup');
 var close = document.querySelector('.form-popup__close');
 var message = document.querySelector('.form-popup__message');
-
 var sending = '<span class="loading-span">Сообщение обрабатывается...</span><img src="img/load.gif" alt="loading" width="80" height="80">';
 
 if (sendButton) {
@@ -100,9 +100,9 @@ if (sendButton) {
 		message.innerHTML = sending;
 
 		var myForm = document.querySelector(".guest-form");
-
 		var xhr  = new XMLHttpRequest(),
 				vars = new FormData(myForm);
+
 		xhr.open('POST', 'save_guests.php', true);
 		xhr.send(vars);
 
@@ -113,6 +113,7 @@ if (sendButton) {
 		var	name = document.getElementById('first-name').value,
 				surname = document.getElementById('second-name').value,
 				come = '';
+
 		if (document.querySelector('input[name="will-be"]:checked')) {
 			come = document.querySelector('input[name="will-be"]:checked').value;
 		}
